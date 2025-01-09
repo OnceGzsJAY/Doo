@@ -2,7 +2,6 @@ function http_post(url, post_content, request_header = ["Content-Type", "applica
     return new Promise((resolve, reject) => {
         const http_connect = {
             request: new XMLHttpRequest(),
-            // return_value: []
         };
     
         http_connect.request.open("POST", url, true); // connect
