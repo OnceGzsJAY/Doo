@@ -16,7 +16,7 @@ function http_post(url, post_content, request_header = ["Content-Type", "applica
         // request timeout
         http_connect.request.timeout = timeout_time;
         http_connect.request.ontimeout = function () {
-            http_connect.return_value.push("timeout!");
+            reject("timeout!");
         };
         // request timeout
     
@@ -24,7 +24,7 @@ function http_post(url, post_content, request_header = ["Content-Type", "applica
         http_connect.request.onreadystatechange = function () {
             if (http_connect.request.readyState === 4) { // request ok
                 if (http_connect.request.status === true_status_code) { // check status
-                    resolve.return_value.push(http_connect.request.responseText);
+                    resolve(http_connect.request.responseText);
                 } else {
                     reject("status is bad. the responseText : " + http_connect.request.responseText);
                 }
