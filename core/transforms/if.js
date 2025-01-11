@@ -1,6 +1,6 @@
-function doo_if(expression ,code ,different_id) {
+function doo_if(expression ,code ,id) {
     the_expression_code = eval(expression);
-    let file_id_object = document.getElementById(different_id);
+    let file_id_object = document.getElementById(id);
     if (the_expression_code) {
         file_id_object.innerHTML(code);
         return true;
