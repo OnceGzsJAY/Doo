@@ -9,3 +9,5 @@ function doo_if(expression ,code ,different_id) {
     }
     return "Error : please email the Doo Team";
 }
+
+export { doo_if }
